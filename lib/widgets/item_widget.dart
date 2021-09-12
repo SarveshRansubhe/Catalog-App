@@ -4,7 +4,7 @@ import 'package:flutter_catelog/models/catalog.dart';
 class ItemWidget extends StatelessWidget {
   final Item item;
 
-  const ItemWidget({Key? key, required this.item})
+  const ItemWidget({Key key, @required this.item})
       // ignore: unnecessary_null_comparison
       : assert(item != null),
         super(key: key);
