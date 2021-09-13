@@ -41,8 +41,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: MyTheme.creamColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        backgroundColor: Colors.black,
-        focusColor: Colors.white,
+        backgroundColor: Colors.white,
         child: Icon(CupertinoIcons.cart),
       ),
       body: SafeArea(
