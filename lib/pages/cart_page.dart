@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catelog/core/store.dart';
 import 'package:flutter_catelog/models/cart.dart';
+import 'package:flutter_catelog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartPage extends StatelessWidget {
@@ -9,6 +11,7 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: "Cart".text.make(),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         children: [
@@ -21,7 +24,12 @@ class CartPage extends StatelessWidget {
   }
 }
 
-class _CartTotal extends StatelessWidget {
+class _CartTotal extends StatefulWidget {
+  @override
+  __CartTotalState createState() => __CartTotalState();
+}
+
+class __CartTotalState extends State<_CartTotal> {
   @override
   Widget build(BuildContext context) {
     final CartModel _cart = (VxState.store as MyStore).cart;
@@ -45,15 +53,30 @@ class _CartTotal extends StatelessWidget {
           ),
           30.widthBox,
           ElevatedButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: "Buying not supported yet.".text.make(),
-              ));
-            },
+            child: "Buy".text.white.make(),
             style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all(context.backgroundColor)),
-            child: "Buy".text.white.make(),
+            onPressed: () {
+              showCupertinoDialog(
+                  context: context,
+                  builder: (BuildContext context) => CupertinoAlertDialog(
+                        title: Text("Confirm Message"),
+                        content: Text(
+                            "Are you sure you want to spent \$${_cart.totalPrice}"),
+                        actions: [
+                          CupertinoDialogAction(
+                            child: Text("NO"),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                          CupertinoDialogAction(
+                            child: Text("YES"),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, MyRoutes.endRoute),
+                          ),
+                        ],
+                      ));
+            },
           ).w32(context)
         ],
       ),

@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+   
     package="com.example.flutter_catelog">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="flutter_catelog"
+        android:label="Catalog App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
