@@ -59,6 +59,7 @@ class __CartTotalState extends State<_CartTotal> {
                     MaterialStateProperty.all(context.backgroundColor)),
             onPressed: () {
               showCupertinoDialog(
+                  barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context) => CupertinoAlertDialog(
                         title: Text("Confirm Message"),
