@@ -10,7 +10,6 @@ class MyTheme {
         color: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        textTheme: Theme.of(context).textTheme,
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
@@ -21,7 +20,6 @@ class MyTheme {
         color: Colors.black,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        textTheme: Theme.of(context).textTheme,
       ));
 
   //colors:

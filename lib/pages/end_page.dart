@@ -8,7 +8,7 @@ class EndPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("The End"),
+        title: Text("Thanks for the purchase!!"),
         backgroundColor: Colors.transparent,
       ),
       body: Column(
@@ -19,10 +19,7 @@ class EndPage extends StatelessWidget {
           Align(
             alignment: Alignment.center,
           ),
-          Image.asset(
-            "assets/images/150.jpg",
-            fit: BoxFit.cover,
-          ),
+          
           ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: Colors.purple,
@@ -36,24 +33,25 @@ class EndPage extends StatelessWidget {
                   barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context) => CupertinoAlertDialog(
-                        title: Text("150 rupiya dega?"),
-                        content: Text("Ha ya Na"),
+                        title: Text("Confirm"),
+                        content: Text("Do you really want to exit this app"),
                         actions: [
                           CupertinoDialogAction(
-                            child: Text("Mai garib hu..."),
+                            child: Text("NO"),
                             onPressed: () => Navigator.pop(context),
                           ),
                           CupertinoDialogAction(
-                              child: Text("Haa bahut paisa hai"),
+                              child: Text("YES"),
                               onPressed: () => SystemNavigator.pop()),
                         ],
                       ));
             },
             child: Text(
-              "Bolo Bhai",
+              "Exit App?",
               style: TextStyle(color: Colors.black),
             ),
-          )
+          ),
+          
         ],
       ),
     );

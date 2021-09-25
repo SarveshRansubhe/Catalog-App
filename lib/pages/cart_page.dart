@@ -47,7 +47,7 @@ class __CartTotalState extends State<_CartTotal> {
               return "\$${_cart.totalPrice}"
                   .text
                   .xl5
-                  .color(context.theme.accentColor)
+                  .color(context.theme.colorScheme.secondary)
                   .make();
             },
           ),
