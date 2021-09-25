@@ -1,6 +1,7 @@
 # flutter_catelog
 
 A new Flutter project.
+Referred 30 days of flutter by codepur.
 
 ## Getting Started
 
